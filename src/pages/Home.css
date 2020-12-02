@@ -6,33 +6,30 @@
 
 .home__header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 20px 30px;
+  min-width: 13vw;
 }
 
 .home__header a {
   margin-right: 20px;
   text-decoration: inherit;
   color: rgba(0, 0, 0, 0.87);
-  font-size: 15px;
+  font-size: 13px;
 }
 .home__header a:hover {
   text-decoration: underline;
+  color: #666;
 }
 
-.home__headerLeft {
-}
-
-.home__headerRight {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-width: 13vw;
-}
-
-.home__headerRight > .MuiSvgIcon-root {
+.home__header > .MuiSvgIcon-root {
   margin-right: 20px;
+  color: #666;
+  cursor: pointer;
+}
+.home__header > .MuiSvgIcon-root:hover {
+  color: #333;
 }
 
 .home__body {
@@ -45,7 +42,4 @@
 .home__body > img {
   object-fit: contain;
   height: 100px;
-}
-
-.home__inputContainer {
 }

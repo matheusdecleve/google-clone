@@ -9,6 +9,9 @@
   max-width: 560px;
   margin: 40px auto 0 auto;
 }
+.search__input:hover {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
 
 .search__input > input {
   flex: 1;
@@ -29,6 +32,9 @@
   display: flex;
   justify-content: center;
 }
+.search__noButtons {
+  display: none !important;
+}
 
 .search__buttons button {
   margin: 5px;
@@ -37,6 +43,7 @@
   border: solid 1px white;
   text-transform: inherit;
   color: #5f6368;
+  font-weight: 400;
 }
 .search__buttons button:hover {
   background-image: -webkit-linear-gradient(top, #f8f8f8, #f1f1f1);
@@ -44,7 +51,4 @@
   background-color: #f8f8f8;
   color: #222;
   border: solid 1px #c6c6c6;
-}
-.search__buttonsHidden {
-  display: none !important;
 }
