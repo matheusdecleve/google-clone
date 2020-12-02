@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './global.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./global.css";
+import App from "./App";
 
-import reducer, { initialState } from './reducer';
-import { StateProvider } from './StateProvider';
+import reducer, { initialState } from "./reducer";
+import { StateProvider } from "./StateProvider";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,5 +12,5 @@ ReactDOM.render(
       <App />
     </StateProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
