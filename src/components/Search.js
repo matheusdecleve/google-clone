@@ -16,14 +16,14 @@ function Search({ hideButtons = false }) {
 
   const searchFunction = (e) => {
     e.preventDefault();
-    console.log(input);
 
-    dispatch({
-      type: actionTypes.SET_SEARCH_TERM,
-      term: input,
-    });
-
-    history.push("/search");
+    if (input) {
+      dispatch({
+        type: actionTypes.SET_SEARCH_TERM,
+        term: input,
+      });
+      history.push("/search");
+    }
   };
 
   return (
@@ -34,29 +34,20 @@ function Search({ hideButtons = false }) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           type="text"
+          placeholder={input}
         />
         <MicIcon />
       </div>
       {!hideButtons ? (
         <div className="search__buttons">
           <Button type="submit" onClick={searchFunction} variant="outlined">
-            Google Search
+            Pesquisa Google
           </Button>
-          <Button variant="outlined">I'm Feeling Lucky</Button>
+          <Button variant="outlined">Estou com sorte</Button>
         </div>
       ) : (
-        <div className="search__buttons">
-          <Button
-            className="search__buttonsHidden"
-            variant="outlined"
-            type="submit"
-            onClick={searchFunction}
-          >
-            Google Search
-          </Button>
-          <Button className="search__buttonsHidden" variant="outlined">
-            I'm Feeling Lucky
-          </Button>
+        <div className="search__noButtons">
+          <Button type="submit" onClick={searchFunction}></Button>
         </div>
       )}
     </form>

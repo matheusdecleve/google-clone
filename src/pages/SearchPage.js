@@ -13,6 +13,8 @@ import DescriptionIcon from "@material-ui/icons/Description";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import RoomIcon from "@material-ui/icons/Room";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import AppsIcon from "@material-ui/icons/Apps";
+import { Avatar } from "@material-ui/core";
 
 function SearchPage() {
   const [{ term }, dispatch] = useStateValue();
@@ -22,9 +24,6 @@ function SearchPage() {
 
   // Mock API call
   //const data = Response;
-
-  console.log(data);
-
   return (
     <div className="searchPage">
       <div className="searchPage__header">
@@ -41,15 +40,15 @@ function SearchPage() {
             <div className="searchPage__optionsLeft">
               <div className="searchPage__option">
                 <SearchIcon />
-                <Link to="/all">All</Link>
+                <Link to="/all">Todas</Link>
               </div>
               <div className="searchPage__option">
                 <DescriptionIcon />
-                <Link to="/news">News</Link>
+                <Link to="/news">Notícias</Link>
               </div>
               <div className="searchPage__option">
                 <ImageIcon />
-                <Link to="/images">Images</Link>
+                <Link to="/images">Imagens</Link>
               </div>
               <div className="searchPage__option">
                 <LocalOfferIcon />
@@ -57,25 +56,29 @@ function SearchPage() {
               </div>
               <div className="searchPage__option">
                 <RoomIcon />
-                <Link to="/maps">Maps</Link>
+                <Link to="/maps">Mapas</Link>
               </div>
               <div className="searchPage__option">
                 <MoreVertIcon />
-                <Link to="/more">More</Link>
+                <Link to="/more">Mais</Link>
               </div>
             </div>
             <div className="searchPage__optionsRight">
               <div className="searchPage__option">
-                <Link to="/settings">Settings</Link>
+                <Link to="/settings">Configurações</Link>
               </div>
               <div className="searchPage__option">
-                <Link to="/tools">Tools</Link>
+                <Link to="/tools">Ferramentas</Link>
               </div>
             </div>
           </div>
         </div>
+        <div className="searchPage__headerRight">
+          <AppsIcon />
+          <Avatar />
+        </div>
       </div>
-      {true && (
+      {term && (
         <div className="searchPage__results">
           <p className="searchPage__resultCount">
             About {data?.searchInformation.formattedTotalResults} results (
@@ -84,7 +87,7 @@ function SearchPage() {
           {data?.items.map((item) => (
             <div className="searchPage__result">
               <a className="searchPage__resultLink" href={item.link}>
-                {item.pagemap?.cse_image?.length > 0 &&
+                {/* item.pagemap?.cse_image?.length > 0 &&
                   item.pagemap?.cse_image[0]?.src && (
                     <img
                       className="searchPage__resultImage"
@@ -94,7 +97,7 @@ function SearchPage() {
                       }
                       alt=""
                     />
-                  )}
+                    ) */}
                 {item.displayLink}
               </a>
               <a className="searchPage__resultTitle" href={item.link}>
